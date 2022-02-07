@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tg="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Dodaj operatora</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Dodaj nowy operator</h1>
+
+		<br />
+
+		<form action="#" th:action="@{/save}" th:object="${operatorzy}"
+			method="post">
+
+			<table border="1" cellpadding="10">
+				<!-- Table first row-->
+				<tr>
+					<td>Nazwa operatora</td>
+					<td><input type="text" th:field="*{nazwa}"></td>
+				</tr>
+				<tr>
+					<td>Data założenia</td>
+					<td><input type="text" th:field="*{data_zalozenia}"></td>
+				</tr>
+				<tr>
+					<td>Numer adresu</td>
+					<td><input type="text" th:field="*{nr_adresu}"></td>
+				</tr>
+
+				<!-- save button -->
+				<tr>
+					<td colspan="2"><button type="submit">Zapisz</button></td>
+				</tr>
+
+
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>

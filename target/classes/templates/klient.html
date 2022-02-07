@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Klienci</title>
+</head>
+<body>
+
+	<div align="center">
+		<!-- Page header -->
+		<h1>Klienci</h1>
+
+		<a href="/newklient">Dodaj klienta</a> <br />
+	    <br />
+
+
+		<table border="1" cellpadding="10">
+
+
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Imie</th>
+					<th>Nazwisko</th>
+					<th>Data</th>
+					<th>Plec</th>
+					<th>PESEL</th>
+					<th>Telefon</th>
+					<th>Numer operatora</th>
+					<th>Numer adresu</th>
+					<th>Akcja</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="klient: ${listKlient}">
+					<td th:text="${klient.nr_klienta}">ID</td>
+					<td th:text="${klient.imie}">Imie</td>
+					<td th:text="${klient.nazwisko}">Nazwisko</td>
+					<td th:text="${klient.data_urodzenia}">Data urodzenia</td>
+					<td th:text="${klient.plec}">Płeć</td>
+					<td th:text="${klient.pesel}">PESEL</td>
+					<td th:text="${klient.nr_telefonu}">Telefon</td>
+					<td th:text="${klient.nr_operatora}">Numer operatora</td>
+					<td th:text="${klient.nr_adresu}">Numer adresu</td>
+					<td>
+						<a th:href="@{'/editklient/' +${klient.nr_klienta}}">Edytuj</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/deleteklient/' +${klient.nr_klienta}}">Usuń</a>
+					</td>
+			</tbody>
+
+		</table>
+
+	</div>
+	<br/><br/><br/>
+<a href="/admin">Wróć</a> <br /><a href="/login">Wyloguj się</a> <br />
+</body>
+</html>

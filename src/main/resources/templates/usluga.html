@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Usługi</title>
+</head>
+<body>
+
+	<div align="center">
+		<!-- Page header -->
+		<h1>Usługi</h1>
+
+		<a href="/newusluga">Dodaj usługę</a> <br />
+	    <br />
+
+
+		<table border="1" cellpadding="10">
+
+
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nazwa</th>
+					<th>Opis</th>
+					<th>Data zawarcia umowy</th>
+					<th>Data zakończenia umowy</th>
+					<th>Cena</th>
+					<th>Numer punktu sprzedaży</th>
+					<th>Numer klienta</th>
+					<th>Akcja</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="usluga: ${listUsluga}">
+					<td th:text="${usluga.nr_uslugi}">ID</td>
+					<td th:text="${usluga.nazwa}">Nazwa</td>
+					<td th:text="${usluga.opis}">Opis</td>
+					<td th:text="${usluga.data_od}">Data zawarcia umowy</td>
+					<td th:text="${usluga.data_do}">Data zakończenia umowy</td>
+					<td th:text="${usluga.cena}">Cena</td>
+					<td th:text="${usluga.nr_punktu_sprzedazy}">Numer punktu sprzedaży</td>
+					<td th:text="${usluga.nr_klienta}">Numer klienta</td>
+					<td>
+						<a th:href="@{'/editusluga/' +${usluga.nr_uslugi}}">Edytuj</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/deleteusluga/' +${usluga.nr_uslugi}}">Usuń</a>
+					</td>
+			</tbody>
+
+		</table>
+
+	</div><br/><br/><br/>
+<a href="/admin">Wróć</a> <br /><a href="/login">Wyloguj się</a> <br />
+</body>
+</html>

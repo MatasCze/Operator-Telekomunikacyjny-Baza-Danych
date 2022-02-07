@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tg="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Operator telekomunikacyjny aplikacja</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Operator telekomunikacyjny</h1>
+
+		<a href="/new">Dodaj operatora</a> <br />
+		<br />
+
+
+		<table border="1" cellpadding="10">
+
+
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nazwa</th>
+					<th>Data założenia</th>
+					<th>Numer adresu</th>
+					<th>Akcja</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="operatorzy: ${listOperatorzy}">
+					<td th:text="${operatorzy.nr_operatora}">ID</td>
+					<td th:text="${operatorzy.nazwa}">Nazwa</td>
+					<td th:text="${operatorzy.data_zalozenia}">Data założenia</td>
+					<td th:text="${operatorzy.nr_adresu}">Numer adresu</td>
+
+					<td>
+						<a th:href="@{'/edit/' +${operatorzy.nr_operatora}}">Edytuj</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a
+						th:href="@{'/delete/' +${operatorzy.nr_operatora}}">Usuń</a>
+					</td>
+
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+	<br/><br/><br/>
+<a href="/admin">Wróć</a> <br /><a href="/login">Wyloguj się</a> <br />
+</body>
+
+</html>

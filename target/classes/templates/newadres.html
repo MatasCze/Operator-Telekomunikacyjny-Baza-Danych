@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tg="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Dodaj adres</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Dodaj nowy adres</h1>
+
+		<br />
+
+		<form action="#" th:action="@{/saveadres}" th:object="${adres}"
+			method="post">
+
+			<table border="1" cellpadding="10">
+				<!-- Table first row-->
+				<tr>
+					<td>Miasto</td>
+					<td><input type="text" th:field="*{miasto}"></td>
+				</tr>
+				<tr>
+					<td>Ulica</td>
+					<td><input type="text" th:field="*{ulica}"></td>
+				</tr>
+				<tr>
+					<td>Numer lokalu</td>
+					<td><input type="text" th:field="*{nr_lokalu}"></td>
+				</tr>
+				<tr>
+					<td>Kod pocztowy</td>
+					<td><input type="text" th:field="*{kod_pocztowy}"></td>
+				</tr>
+				<tr>
+					<td>Poczta</td>
+					<td><input type="text" th:field="*{poczta}"></td>
+				</tr>
+				
+			
+
+				<!-- save button -->
+				<tr>
+					<td colspan="2"><button type="submit">Zapisz</button></td>
+				</tr>
+
+
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>

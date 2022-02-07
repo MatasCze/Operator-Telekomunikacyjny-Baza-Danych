@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tg="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Dodaj klienta</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Dodaj nowego klienta</h1>
+
+		<br />
+
+		<form action="#" th:action="@{/saveklient}" th:object="${klient}"
+			method="post">
+
+			<table border="1" cellpadding="10">
+				<!-- Table first row-->
+				<tr>
+					<td>Imie</td>
+					<td><input type="text" th:field="*{imie}"></td>
+				</tr>
+				<tr>
+					<td>Nazwisko</td>
+					<td><input type="text" th:field="*{nazwisko}"></td>
+				</tr>
+				<tr>
+					<td>Data urodzenia</td>
+					<td><input type="text" th:field="*{data_urodzenia}"></td>
+				</tr>
+				<tr>
+					<td>Płeć</td>
+					<td><input type="text" th:field="*{plec}"></td>
+				</tr>
+				<tr>
+					<td>PESEL</td>
+					<td><input type="text" th:field="*{pesel}"></td>
+				</tr>
+				<tr>
+					<td>Telefon</td>
+					<td><input type="text" th:field="*{nr_telefonu}"></td>
+				</tr>
+				<tr>
+					<td>Numer operatora</td>
+					<td><input type="text" th:field="*{nr_operatora}"></td>
+				</tr>
+				<tr>
+					<td>Numer adresu</td>
+					<td><input type="text" th:field="*{nr_adresu}"></td>
+				</tr>
+
+				<!-- save button -->
+				<tr>
+					<td colspan="2"><button type="submit">Zapisz</button></td>
+				</tr>
+
+
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:tg="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Dodaj usługę</title>
+</head>
+
+<body>
+	<div align="center">
+		<!-- Page header -->
+		<h1>Dodaj nową usługę</h1>
+
+		<br />
+
+		<form action="#" th:action="@{/saveusluga}" th:object="${usluga}"
+			method="post">
+
+			<table border="1" cellpadding="10">
+				<!-- Table first row-->
+				<tr>
+					<td>Nazwa</td>
+					<td><input type="text" th:field="*{nazwa}"></td>
+				</tr>
+				<tr>
+					<td>Opis</td>
+					<td><input type="text" th:field="*{opis}"></td>
+				</tr>
+				<tr>
+					<td>Data zawarcia umowy</td>
+					<td><input type="text" th:field="*{data_od}"></td>
+				</tr>
+				<tr>
+					<td>Data zakończenia umowy</td>
+					<td><input type="text" th:field="*{data_do}"></td>
+				</tr>
+				<tr>
+					<td>Cena</td>
+					<td><input type="text" th:field="*{cena}"></td>
+				</tr>
+				<tr>
+					<td>Numer punktu sprzedazy</td>
+					<td><input type="text" th:field="*{nr_punktu_sprzedazy}"></td>
+				</tr>
+				<tr>
+					<td>Numer klienta</td>
+					<td><input type="text" th:field="*{nr_klienta}"></td>
+				</tr>
+			
+			
+
+				<!-- save button -->
+				<tr>
+					<td colspan="2"><button type="submit">Zapisz</button></td>
+				</tr>
+
+
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
